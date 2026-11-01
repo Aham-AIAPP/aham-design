@@ -111,8 +111,8 @@ aham-design 没有 Excel 引擎。生成 Excel 时用环境里已有的表格库
 改了本插件的文件后，在仓库根目录运行：
 
 ```bash
-python3 -m unittest discover -s plugins/aham-design/tests
-cd plugins/aham-design/skills/aham-design/assets/ui && npm run build && npm run check
+python3 -m unittest discover -s tests
+cd skills/aham-design/assets/ui && npm run build && npm run check
 ```
 
 界面的浏览器回归和截图（`npm run test:browser`、`npm run shots`）要用 Playwright 的 Chromium 和 WebKit，本机没有时由仓库的 CI 运行。

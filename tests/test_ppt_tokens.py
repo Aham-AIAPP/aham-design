@@ -7,7 +7,7 @@
 - 引擎脚本里没有写死色值、画布尺寸和字体名，预览页不从网络加载字体，数字不用等宽字体；
 - 决议表的 PPT 取值：墨三 6B7482、橙 CE8422、底一 F6F8FB、蓝浅底 EEF2FC、青绿 17998A 保留；
 - 有 Node.js 时，tokens.js、components.js 引出的常量与 tokens.json 一致，环境变量 AHAM_DESIGN_TOKENS 生效，示例生成两次一致。
-用法：python3 -m unittest discover -s plugins/aham-design/tests
+用法：python3 -m unittest discover -s tests
 """
 
 from __future__ import annotations

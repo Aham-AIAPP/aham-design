@@ -1,7 +1,7 @@
 """tokens.json 的测试：结构完整、取值在范围内、每个取值有用途说明、对比度达标。
 
 对比度按 WCAG 2.x 的相对亮度公式自己计算，不依赖第三方库。
-用法：python3 -m unittest discover -s plugins/aham-design/tests
+用法：python3 -m unittest discover -s tests
 """
 
 from __future__ import annotations

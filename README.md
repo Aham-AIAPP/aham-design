@@ -5,10 +5,10 @@ Aham 系列的通用设计规范和排版引擎，中文名「Aham 设计规范�
 ## 安装
 
 ```text
-/plugin install aham-design --marketplace Aham-AIAPP/aham-plugins
+/plugin install aham-design --marketplace Aham-AIAPP/aham-app
 ```
 
-这一行同时添加插件市场并安装，要 Claude Code 2.1.275 及以上。版本较低时分两步：先 `/plugin marketplace add Aham-AIAPP/aham-plugins`，再 `/plugin install aham-design@aham-plugins`。安装 aham-app 时会一并安装本插件。
+这一行同时添加插件市场并安装，要 Claude Code 2.1.275 及以上。版本较低时分两步：先 `/plugin marketplace add Aham-AIAPP/aham-app`，再 `/plugin install aham-design@aham-plugins`。安装 aham-app 时会一并安装本插件。
 
 ## 取值
 
@@ -46,8 +46,8 @@ Aham 系列的通用设计规范和排版引擎，中文名「Aham 设计规范�
 在仓库根目录运行：
 
 ```bash
-python3 -m unittest discover -s plugins/aham-design/tests
-(cd plugins/aham-design/skills/aham-design/assets/ui && npm run check)
+python3 -m unittest discover -s tests
+(cd skills/aham-design/assets/ui && npm run check)
 ```
 
 `tests/test_ppt_tokens.py` 里调用 Node 的部分，要先在 `skills/aham-ppt/assets/html2pptx` 运行 `npm install`，否则跳过。

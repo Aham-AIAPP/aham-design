@@ -1,6 +1,6 @@
 """网页输出的测试：样式取值来源、渲染器扩展点、Word 内容的网页预览、柱状图和网页审计。
 
-用法：python3 -m unittest discover -s plugins/aham-design/tests
+用法：python3 -m unittest discover -s tests
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ import unittest
 from pathlib import Path
 
 PLUGIN = Path(__file__).resolve().parents[1]
-REPO = PLUGIN.parents[1]
+REPO = PLUGIN  # 插件在仓库根目录
 SKILL = PLUGIN / "skills/aham-word"
 LIB = SKILL / "scripts/aham_doc"
 sys.path.insert(0, str(SKILL / "scripts"))

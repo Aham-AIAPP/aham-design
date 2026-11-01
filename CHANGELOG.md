@@ -1,8 +1,15 @@
 # 变更记录
 
-本文件按 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 的格式记录变更，版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)。aham-design 和 aham-app 两个插件同步发版。
+本文件按 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 的格式记录变更，版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)。
+
+本仓库只放 aham-design 插件，2026-11-01 从 Aham-AIAPP/aham-app（原 aham-plugins）拆出，保留了插件目录的提交历史。1.0.1 及以前是 aham-design 和 aham-app 同步发版时的记录，原样保留。
 
 ## [Unreleased]
+
+### 变更
+
+- 从 aham-app 仓库拆出为独立仓库，插件放在仓库根目录。插件市场仍在 aham-app 仓库，市场名 aham-plugins 不变。插件内容不变。
+- 测试和说明里的路径改为仓库根目录下的路径。
 
 ### 修复
 
@@ -69,6 +76,6 @@
 
 迁移时逐项比对过新旧产出：Word 样张、PPT 样张和界面样式各有一份差异清单，没有放进本仓库。
 
-[Unreleased]: https://github.com/Aham-AIAPP/aham-plugins/compare/v1.0.1...HEAD
-[1.0.1]: https://github.com/Aham-AIAPP/aham-plugins/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/Aham-AIAPP/aham-plugins/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Aham-AIAPP/aham-design/compare/aham-design--v1.0.1...HEAD
+[1.0.1]: https://github.com/Aham-AIAPP/aham-app/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/Aham-AIAPP/aham-app/releases/tag/v1.0.0

@@ -1,6 +1,6 @@
 """排版引擎 aham_doc 的测试：文字规范化、规则读取、块校验、公开接口、依赖方向、品牌参数化和 Word 渲染。
 
-用法：python3 -m unittest discover -s plugins/aham-design/tests
+用法：python3 -m unittest discover -s tests
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import zipfile
 from pathlib import Path
 
 PLUGIN = Path(__file__).resolve().parents[1]
-REPO = PLUGIN.parents[1]
+REPO = PLUGIN  # 插件在仓库根目录
 SKILL = PLUGIN / "skills/aham-word"
 LIB = SKILL / "scripts/aham_doc"
 sys.path.insert(0, str(SKILL / "scripts"))
