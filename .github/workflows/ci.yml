@@ -60,8 +60,9 @@ jobs:
         run: npm run check
 
   # 界面浏览器回归：qa/run-browser.mjs 在 Chromium 和 WebKit 里各跑一遍
+  # Playwright 1.56.1 不支持 ubuntu 26.04，ubuntu-latest 换到 26.04 后装不上浏览器，这里固定 24.04
   ui-browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -93,8 +94,9 @@ jobs:
   # PPT 样张流程要用 aham-app 的方案流程，放在 aham-app 仓库的 CI 里跑。
 
   # 界面示例页截图：1440 和 390 两种宽度、浅色和深色两种主题，上传为构件，用来看外观
+  # Playwright 1.56.1 不支持 ubuntu 26.04，ubuntu-latest 换到 26.04 后装不上浏览器，这里固定 24.04
   shots:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
