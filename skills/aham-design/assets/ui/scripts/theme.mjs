@@ -37,9 +37,10 @@ const lab = ([L, C, H]) => [L, C * Math.cos(H * Math.PI / 180), C * Math.sin(H *
 export const deltaE = (x, y) => Math.hypot(...lab(hexToLch(x)).map((v, i) => v - lab(hexToLch(y))[i]));   // CIE76
 
 // ── Generator ────────────────────────────────────────────────────────────────
-export const NEUTRALS = ['bg', 'canvas', 'fill', 'hover', 'selected', 'nav-hover', 'nav-selected', 'line', 'line-soft', 'edge', 'line-strong', 'pop-bg', 'pop-edge', 'button', 'button-hover', 'button-press', 'ink', 'ink-2', 'muted', 'faint'];
+export const NEUTRALS = ['bg', 'canvas', 'fill', 'hover', 'selected', 'nav-hover', 'nav-selected', 'line', 'line-soft', 'edge', 'line-strong', 'pop-bg', 'pop-edge', 'button', 'button-hover', 'button-press', 'ink', 'ink-2', 'muted', 'placeholder', 'faint'];
 export const ACCENTS = ['blue', 'blue-bg', 'action', 'action-hover', 'action-press'];
-const SCALED = new Set(['line', 'line-soft', 'edge', 'line-strong', 'ink', 'ink-2', 'muted', 'faint']);   // text and lines follow the contrast input
+const READABLE = ['ink', 'ink-2', 'muted', 'placeholder'];   // text that has to reach 4.5:1 on bg
+const SCALED = new Set(['line', 'line-soft', 'edge', 'line-strong', 'ink', 'ink-2', 'muted', 'placeholder', 'faint']);   // text and lines follow the contrast input
 // The defaults are the hand-tuned canvas and primary colours, read from tokens.json through the view.
 export const DEFAULTS = Object.fromEntries(['light', 'dark'].map(m => [m, { base: resolve(`color.${m}.canvas`), accent: resolve(`color.${m}.action`), contrast: 60 }]));
 const hand = mode => Object.fromEntries(leaves(`color.${mode}`).map(([n, p]) => [n, resolve(p)]));
@@ -55,6 +56,13 @@ export function generateTheme({ mode = 'light', base, accent, contrast: k } = {}
     // A grey reference base carries no tint of its own: keep each key's hand-tuned tint unless the new base brings one.
     const [chroma, hue] = rC > 0.5 ? [C * (bC / rC), bH] : bC > 0.5 ? [C + bC, bH] : [C, H];
     out[key] = lchToHex([Math.min(100, Math.max(0, bL + dL)), Math.max(0, chroma), hue]);
+  }
+  // Text that must stay readable keeps 4.5:1 on the content background: a light base pulls the offsets up with it,
+  // and the placeholder sits only a step above that floor. Move such a key away from bg until it meets the floor.
+  for (const key of READABLE) {
+    let [L, C, H] = hexToLch(out[key]);
+    const step = hexToLch(out.bg)[0] > L ? -0.5 : 0.5;
+    while (contrast(out[key], out.bg) < 4.5 && L > 0 && L < 100) out[key] = lchToHex([(L += step), C, H]);
   }
   const [aL, aC, aH] = hexToLch(accent), [qL, qC, qH] = hexToLch(DEFAULTS[mode].accent);
   // In the dark theme the hand-tuned primary is lighter than the input; keep that offset too.

@@ -100,7 +100,7 @@
 :where(.aham-workbench) .wb-field:focus{outline:0;border-color:var(--wb-blue);box-shadow:0 0 0 3px var(--wb-blue-bg)}
 :where(.aham-workbench) .wb-field[aria-invalid=true]{outline:0;border-color:var(--wb-danger)}
 :where(.aham-workbench) .wb-field:disabled{background:var(--wb-fill);color:var(--wb-faint);cursor:not-allowed}
-:where(.aham-workbench) .wb-field::placeholder{color:var(--wb-muted)}
+:where(.aham-workbench) .wb-field::placeholder{color:var(--wb-placeholder);opacity:1}
 :where(.aham-workbench) .wb-field.is-number{text-align:end;font-variant-numeric:tabular-nums}
 :where(.aham-workbench) :is(input[type=checkbox],input[type=radio]){appearance:none;display:inline-grid;place-content:center;flex:none;width:14px;height:14px;margin:0;border:1px solid var(--wb-line-strong);border-radius:var(--wb-control-radius);background:var(--wb-bg);vertical-align:middle;cursor:pointer}
 :where(.aham-workbench) input[type=radio]{border-radius:50%}

@@ -57,7 +57,7 @@ class StructureTests(unittest.TestCase):
             [key for key in RAW if not key.startswith("$")],
             ["color", "font", "size", "line", "radius", "shadow", "layout", "role"],
         )
-        self.assertEqual(RAW["$meta"]["version"], "1.0.0")
+        self.assertEqual(RAW["$meta"]["version"], "1.1.0")
 
     def test_every_value_has_a_description(self):
         missing = [path for path, node in LEAVES.items() if not str(node.get("$description") or "").strip()]
@@ -77,7 +77,7 @@ class StructureTests(unittest.TestCase):
         self.assertEqual(sorted(color["gray"], key=int), [str(i) for i in range(19)])
         self.assertEqual(set(color["gray_dark"]), {
             "bg", "canvas", "fill", "selected", "button", "button_hover", "line", "button_press", "nav_hover",
-            "nav_selected", "edge", "line_soft", "line_strong", "pop_bg", "pop_edge", "ink", "ink_2", "muted", "faint"})
+            "nav_selected", "edge", "line_soft", "line_strong", "pop_bg", "pop_edge", "ink", "ink_2", "muted", "placeholder", "faint"})
         for name in ("success", "warning", "danger"):
             for suffix in ("", "_bg", "_dark"):
                 self.assertIn(name + suffix, color["semantic"])
@@ -186,7 +186,7 @@ class ContrastTests(unittest.TestCase):
 
     def test_dark_mode_text(self):
         bg = resolved("color.gray_dark.bg")
-        for path in ("color.blue.dark", "color.gray_dark.ink", "color.gray_dark.ink_2", "color.gray_dark.muted",
+        for path in ("color.blue.dark", "color.gray_dark.ink", "color.gray_dark.ink_2", "color.gray_dark.muted", "color.gray_dark.placeholder",
                      "color.semantic.success_dark", "color.semantic.warning_dark", "color.semantic.danger_dark"):
             self.assertGreaterEqual(contrast(resolved(path), bg), 4.5, path)
         for path in ("color.gray_dark.faint", "color.gray_dark.line_strong"):
