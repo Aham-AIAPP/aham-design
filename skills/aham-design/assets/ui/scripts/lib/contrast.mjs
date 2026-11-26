@@ -5,7 +5,7 @@
 export const PAIRS = [
   ['ink', 'bg', 4.5, '正文'], ['ink', 'canvas', 4.5, '外框和侧栏上的正文、侧栏的导航项'], ['ink', 'fill', 4.5, '小元素底色上的正文'], ['ink', 'selected', 4.5, '选中行的正文'],
   ['ink-2', 'bg', 4.5, '控件里的次要文字（视图页签、标签文字）'], ['muted', 'bg', 4.5, '次要文字'], ['muted', 'canvas', 4.5, '侧栏上的次要文字'], ['muted', 'fill', 4.5, '小元素底色上的次要文字'], ['ink-2', 'canvas', 4.5, '侧栏上的计数'], ['ink', 'nav-selected', 4.5, '侧栏的当前项'], ['ink-2', 'nav-selected', 4.5, '侧栏当前项上的计数'], ['ink', 'nav-hover', 4.5, '侧栏悬停项'],
-  ['faint', 'bg', 3, '图标、禁用文字'], ['faint', 'fill', 3, '小元素底色上的图标'],
+  ['placeholder', 'bg', 4.5, '输入框的占位文字'], ['faint', 'bg', 3, '图标、禁用文字'], ['faint', 'fill', 3, '小元素底色上的图标'],
   ['line-strong', 'bg', 3, '输入框的描边'], ['line-strong', 'pop-bg', 3, '弹层里的输入框描边'],
   ['on', 'action', 4.5, '主按钮文字'], ['on', 'action-hover', 4.5, '主按钮悬停时的文字'], ['on', 'action-press', 4.5, '主按钮按下时的文字'],
   ['ink', 'button', 4.5, '次要按钮文字'], ['ink', 'button-hover', 4.5, '次要按钮悬停文字'], ['ink', 'button-press', 4.5, '次要按钮按下文字'], ['danger', 'danger-press', 4.5, '危险按钮按下文字'],

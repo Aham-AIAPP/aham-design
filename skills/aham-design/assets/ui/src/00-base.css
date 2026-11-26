@@ -38,10 +38,10 @@
  .aham-workbench :is(input,select,textarea) {font-size:var(--wb-touch-input)}
 }
 @media (prefers-contrast: more) {
- .aham-workbench {--wb-line:{{color.contrast-more.light.line}};--wb-line-strong:{{color.contrast-more.light.line}};--wb-muted:{{color.contrast-more.light.muted}};--wb-faint:{{color.contrast-more.light.muted}}}
- .aham-workbench[data-theme="dark"] {--wb-line:{{color.contrast-more.dark.line}};--wb-line-strong:{{color.contrast-more.dark.line}};--wb-muted:{{color.contrast-more.dark.muted}};--wb-faint:{{color.contrast-more.dark.muted}}}
+ .aham-workbench {--wb-line:{{color.contrast-more.light.line}};--wb-line-strong:{{color.contrast-more.light.line}};--wb-muted:{{color.contrast-more.light.muted}};--wb-placeholder:{{color.contrast-more.light.muted}};--wb-faint:{{color.contrast-more.light.muted}}}
+ .aham-workbench[data-theme="dark"] {--wb-line:{{color.contrast-more.dark.line}};--wb-line-strong:{{color.contrast-more.dark.line}};--wb-muted:{{color.contrast-more.dark.muted}};--wb-placeholder:{{color.contrast-more.dark.muted}};--wb-faint:{{color.contrast-more.dark.muted}}}
  .aham-workbench :focus-visible {outline-width:3px}
 }
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
- .aham-workbench:not([data-theme="light"]) {--wb-line:{{color.contrast-more.dark.line}};--wb-line-strong:{{color.contrast-more.dark.line}};--wb-muted:{{color.contrast-more.dark.muted}};--wb-faint:{{color.contrast-more.dark.muted}}}
+ .aham-workbench:not([data-theme="light"]) {--wb-line:{{color.contrast-more.dark.line}};--wb-line-strong:{{color.contrast-more.dark.line}};--wb-muted:{{color.contrast-more.dark.muted}};--wb-placeholder:{{color.contrast-more.dark.muted}};--wb-faint:{{color.contrast-more.dark.muted}}}
 }
